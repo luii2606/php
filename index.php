@@ -19,4 +19,5 @@
 <a href="01-basico/condicionales_anidados.php">Condicionales anidados</a>
 <a href="01-basico/condicionales_switch_case.php">Condicionales switch y case</a>
 <a href="01-basico/bucle-while.php">Bucle while</a>
+<a href="expresiones_regulares/funciones_string.php">expresiones</a>
 </div>

@@ -1,7 +1,7 @@
 <?php
 
-$nombre = 'Julian';
-$apellido = 'Araque';
+$nombre = 'Luisa';
+$apellido = 'Ramos';
 $pais = 'Colombia';
 
 echo $nombre.' '.$apellido.' el pais es: '.$pais."<br>";
