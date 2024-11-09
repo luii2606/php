@@ -1,5 +1,5 @@
 <?php
-$texto = "HOLA 22 ";
+$texto = "B2Wn0t";
 // $exp = "/PRUEBA/i";
 // $exp = "/[0-9]/";
 // $exp = "/^texto/i";
@@ -11,18 +11,19 @@ $texto = "HOLA 22 ";
 // $exp = "/[\d]/ numeros";
 // $exp = "/[\D]/ letras";
 // $exp = "/[A-Z]{4,}/";
-$exp = "/([A-Z]{4,}).([0-50]{2,})/";
-$exp = "/[\W]/";
-$resultado = preg_match_all($exp, $texto, $coincidencias,
-PREG_OFFSET_CAPTURE);
+// $exp = "/([A-Z]{4,}).([0-50]{2,})/";
+// $exp = "/[\W]/";
+$exp = "/(?=.*([A-Z]){2})(?=.*([a-z]){2})(?=.*\d{2}))/";
 
-// echo "<pre>";
-// print_r($coincidencias);
-// echo "</pre>";
+$resultado = preg_match_all($exp, $texto, $coincidencias,PREG_OFFSET_CAPTURE);
+
+echo "<pre>";
+print_r($resultado);
+echo "</pre>";
 // echo "<br>";
 
 if ($resultado) {
- echo "caracter especial encontrado";
+ echo "cumple";
 } else {
-  echo " ningun caracter especial encontrado";
+  echo " no cumple";
 }
