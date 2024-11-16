@@ -20,4 +20,6 @@
 <a href="01-basico/condicionales_switch_case.php">Condicionales switch y case</a>
 <a href="01-basico/bucle-while.php">Bucle while</a>
 <a href="expresiones_regulares/funciones_string.php">expresiones</a>
+<a href="crud/conexion.php">conexion</a>
+<a href="crud/index.php">crud</a>
 </div>
