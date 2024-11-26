@@ -7,11 +7,11 @@ $nombre = $_POST['nombre'];
 $apellido = $_POST['apellido'];
 $correo = $_POST['correo'];
 $fecha_nacimiento = $_POST['fecha_nacimiento'];
-$id_genero = $_POST['genero_id'];
-$id_ciudad = $_POST['ciudad_id'];
+$id_genero = $_POST['id_genero'];
+$id_ciudad = $_POST['id_ciudad'];
 $lenguajes = $_POST['lenguajes'];
 
-$sql ="INSERT INTO USUARIOS (nombre, apellido, correo, fecha_nacimiento, genero_id, ciudad_id) VALUES
+$sql ="INSERT INTO USUARIOS (nombre_usuario, apellido_usuario, correo_usuario, fecha_nacimiento, genero, ciudad) VALUES
 (:nombre, :apellido, :correo, :fecha_nacimiento, :genero, :ciudad)";
 
 
@@ -28,7 +28,7 @@ $stm ->bindParam(":genero",$id_genero);
 $stm ->bindParam(":ciudad",$id_ciudad);
 
 
-$usuario= $stm-> execute();
+// $usuario= $stm-> execute();
 
 $id_usuario = $conexion-> lastInsertId();
 
@@ -36,11 +36,14 @@ $id_usuario = $conexion-> lastInsertId();
 
 // recorer
 foreach ($lenguajes as $key => $value) {
-    $sqllenguaje ="INSERT INTO lenguaje_usuario (usuario_id, lenguaje_id) VALUES(:usuario_id, :lenguaje_id)";
+    $sqllenguaje ="INSERT INTO lenguaje_usuarios (id_usuario, id_lenguaje) VALUES
+    (:id_usuario, :id_lenguaje)";
     $stmlen =$conexion->prepare($sqllenguaje);
-    $stmlen ->bindParam(":lenguaje_id",$value);
-    $stmlen ->bindParam(":usuario_id",$id_usuario);
+    $stmlen ->bindParam(":id_lenguaje",$value);
+    $stmlen ->bindParam(":id_usuario",$id_usuario);
     
-    $stmlen-> execute();
+    
 
 }
+
+

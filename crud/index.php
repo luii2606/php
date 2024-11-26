@@ -44,6 +44,13 @@ $usuarios =$banderau->fetchAll();
             <input type="text" name="nombre">
         </div>
         <br>
+?>
+<form action="controlador.php" method="post">
+    <div>
+        <div>
+            <label for="nombre">Nombres</label>
+            <input type="text" name="nombre">
+        </div>
         <div>
             <label for="apellido">Apellidos</label>
             <input type="text" name="apellido">
@@ -62,9 +69,15 @@ $usuarios =$banderau->fetchAll();
         <label for="id_ciudad">Ciudad</label >
         <select name="ciudad_id" id="id_ciudad">
             <?php
-            foreach ($ciudades as $key => $value) {
+            foreach ($ciudades as $key => $value) 
                 ?>
                 <option value="<?= $value['id']?>"><?= $value['nombre']?>
+        <label for="id_ciudad">Ciudad</label >
+        <select name="id_ciudad" id="id_ciudad">
+            <?php
+            foreach ($ciudades as $key => $value) {
+                ?>
+                <option name="id_ciudad" value="<?= $value['id_ciudad']?>"><?= $value['ciudad']?>
                 </option>
             <?php
             }
@@ -79,6 +92,8 @@ $usuarios =$banderau->fetchAll();
             <div>
             <label for="genero<?= $value['id'] ?>"><?= $value['nombre']?>
                 <input type="radio" name="genero_id" value="<?= $value['id']?>" id="genero<?= $value['id']?>">
+            <label for="genero<?= $value['id_genero'] ?>"><?= $value['genero']?>
+                <input type="radio" name="id_genero" value="<?= $value['id_genero']?>" id="genero<?= $value['id_genero']?>">
             </label>
             </div>
             <?php
@@ -94,6 +109,9 @@ $usuarios =$banderau->fetchAll();
                 <label for="lenguaje_<?= $value['id'] ?>"><?= $value['nombre']?></label>
                     <input type="checkbox" name="lenguajes[]" value="<?= $value['id']?>" id="lenguaje_<?= $value['id']?>">
                 
+                <label for="lenguajes<?= $value['id_lenguaje'] ?>"><?= $value['nombre_lenguaje']?>
+                    <input type="checkbox" name="lenguajes[]" value="<?= $value['id_lenguaje']?>" id="lenguaje<?= $value['id_lenguaje']?>">
+                </label>
             </div>
                 <?php
                     }
@@ -117,4 +135,3 @@ $usuarios =$banderau->fetchAll();
     <td>Genero</td>
     <td>Ciudad</td>
 </table>
-
