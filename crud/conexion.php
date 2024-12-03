@@ -3,9 +3,9 @@ class Conexion
 {
     private $conexion;
     private $host = 'localhost';
-    private $db = 'luisaa';
-    private $usuario = 'luisa_2894667';
-    private $contraseña = 'luisa';
+    private $db = 'luisa';
+    private $usuario = 'luisa_2609';
+    private $contraseña = 'luisa26';
 
     public function __construct()
     {
