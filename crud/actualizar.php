@@ -91,6 +91,7 @@ $lenguajes =$banderal->fetchAll();
                 <?php
                     }
                     ?>
+
         </div>
         <br>
     <div>
@@ -98,6 +99,3 @@ $lenguajes =$banderal->fetchAll();
     </div>
 </form>
 </fieldset>
-<a href="tabla.php">Tabla de usuarios</a> 
-
-
